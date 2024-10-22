@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Livro Interativo</title>
+</head>
+<body>
+    <div class="book">
+        <div class="page" id="page1">
+            <h1>Capítulo 1: A Floresta Encantada</h1>
+            <img src="pagina1.jpg">
+            <p>Era uma vez, em uma floresta encantada, um pequeno macaco chamado Tico. Ele adorava voar entre as árvores e cantar para seus amigos. A floresta era cheia de vida, onde cada planta e animal tinha um lugar especial. Mas Tico sabia que algumas coisas estavam mudando...</p>
+            <button onclick="nextPage('page2')">Próxima Página</button>
+        </div>
+        <div class="page" id="page2" style="display: none;">
+            <h1>Capítulo 2: Grande Mudança</h1>
+            <img src="pagina2.jpg">
+            <p>Um dia, Tico ouviu um barulho estranho. Quando foi ver, viu homens grandes com máquinas cortando as árvores! “O que está acontecendo?” ele perguntou. “Precisamos da floresta para viver!” gritou o macaco. Tico ficou triste ao ver sua casa sendo destruída e decidiu que precisava fazer algo.            </p>
+            <button onclick="nextPage('page1')">Página Anterior</button>
+            <button onclick="nextPage('page3')">Próxima Página</button>
+        </div>
+        <div class="page" id="page3" style="display: none;">
+            <h1>Capítulo 3: A Grande Corrente do Bem</h1>
+            <img src="pagina3.jpg">
+            <p>Juntos, Tico e seus amigos decidiram agir! Eles fizeram cartazes e organizaram uma grande reunião. “Vamos mostrar a todos a importância da floresta!” disse a tartaruga. Com coragem e união, os animais começaram a contar suas histórias e a proteger o lar que tanto amavam. E assim, Tico e seus amigos plantaram novas árvores e ensinaram a todos que a floresta precisa de cuidado e amor.</p>
+            <button onclick="nextPage('page2')">Página Anterior</button>
+            <button onclick="alert('Obrigado por ler!')">Finalizar</button>
+        </div>
+    </div>
+    <script>function nextPage(pageId) {
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(page => {
+            page.style.display = 'none';
+        });
+        
+        document.getElementById(pageId).style.display = 'block';
+    }
+    </script>
+</body>
+</html>
